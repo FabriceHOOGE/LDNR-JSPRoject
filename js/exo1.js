@@ -140,7 +140,7 @@
         document.getElementById('name').addEventListener('input', testName);
         document.getElementById('firstname').addEventListener('input', testFirstName);
         document.getElementById('nickname').addEventListener('input', testNickName);
-        document.getElementById('birthday').addEventListener('change', testBirthday);
+        document.getElementById('birthday').addEventListener('input', testBirthday);
         document.getElementById('pwd').addEventListener('input', testPwd);
         document.getElementById('confirm').addEventListener('input', testConfirm);
         document.getElementById('address').addEventListener('input', testAddress);
