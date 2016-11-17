@@ -1,0 +1,170 @@
+#generatorContainer{
+        
+        flex:3;
+        display:none;
+        position:relative;
+        height:calc(100% - 40px);
+        margin:20px;
+        min-height:500px;
+    }
+
+#generatorForm{
+    
+    position:absolute;
+    top:0px;
+    right:0px;
+    width:25%;
+    height:100%;
+    min-width:175px;
+}
+
+#generatorResult{
+    
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    position:absolute;
+    width:0%;
+    height:95%;
+    right:25%;
+    top:2.5%;
+    background:rgba(0,0,0,0.6);
+    
+}
+
+#generatorResult.generated{
+    
+    animation: openGenerator 2s ease both;
+}
+
+@keyframes openGenerator {
+    from {
+        width:0%;
+    }
+    to {
+        width:75%;
+    }
+}
+
+#generatedForm{
+    
+        flex:1;
+        display:flex;
+        justify-content: flex-start;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        width:100%;
+        flex-basis: 70%;
+        overflow:auto;
+}
+
+#generatedForm label {
+        
+        display:block; /* Définition du span comme un bloc (ce n'est plus un inline) */
+        position:relative;
+        height:22px;
+        flex:1;
+        top:5px;
+        min-width:240px;
+        flex-basis:40%;
+            margin-top:inherit; /* Marge extérieure esthétique */
+        margin:10px 10px;
+        line-height:23px; /* Hauteur de la police du label */
+
+        padding-left:5px; /* Marge intérieure */
+        text-transform:uppercase; /* Force l'affichage en majuscule */
+        font-size:0.8em; /* Taille de la police */
+        color:#777; /* Couleur de la police */
+        box-shadow:0 0 1px white; /* Ombre extérieure */
+        background:#CECECE; /* Couleur de fond */
+    }
+
+#generatedForm input {
+    
+        position:absolute;
+        width:40%; /* Largeur relative à celle du label */
+        height:27px; /* Augmente légèrement l'hauteur par défaut de l'input */
+        right:0px; /* Position à droite du label */
+        top:-3px; /* Ajustage vertical de la position */
+        font-size:1.2em; /* Taille de la police */
+        border-radius:10px; /* Coins arrondis */
+        border:1px solid #BBB; /* Bordure grise */
+        background:#EFEFEF; /* Couleur de fond (gris à la limite du blanc) */
+    }
+
+/* Style des input actifs */
+    #generatedForm input:focus:not(.button) {
+
+        background: white; /* Couleur de fond blanc (magnifique =) */
+        box-shadow:0 0 2px black inset; /* Ombre intérieure */
+    }
+
+#generatedCode{
+    
+        flex:1;
+        padding: 10px;
+        margin:10px;
+        flex-basis: 20%;
+        min-height:100px;
+        width:calc(100% - 40px);
+        overflow: auto;
+        background:rgba(255,255,255,0.6); /* Couleur de fond blanc (magnifique =) */
+        box-shadow:0 0 2px black inset; /* Ombre intérieure */
+        border:1px solid #BBB; /* Bordure grise */
+}
+
+#generateButton{
+    position:absolute;
+    bottom:0px;right:0px;
+}
+
+
+    @media all and (max-width:960px) {
+
+        #generatorContainer{flex:1;min-width:90%;}
+    }
+
+    @media all and (max-width:780px) {
+        #generatorForm{height:250px;width:100%;}
+
+        #generatorResult{
+            top:250px;
+            right:inherit;
+            left:2.5%;
+            height:0%;
+            width:inherit;
+            width:95%;
+        }
+        
+    @keyframes openGenerator {
+        from {
+            height:0%;
+        }
+        to {
+            height:100%;
+        }
+    }
+        
+    }
+
+    @media all and (max-height:640px) {
+
+        #generatorContainer{top:100px;}
+    }
+
+    @media all and (max-height:540px) {
+
+        #generatorContainer{top:150px;}
+    }
+
+    @media all and (max-height:440px) {
+
+        #generatorContainer{top:200px;}
+    }
+
+    @media all and (max-height:340px) {
+        
+        header{display:none;}
+        #generatorContainer{top:250px;}
+    }

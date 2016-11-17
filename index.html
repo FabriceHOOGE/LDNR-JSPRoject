@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>LDNR-projects</title>
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/form.css" rel="stylesheet" />
+    <link href="css/tchat.css" rel="stylesheet" />
+    <link href="css/generator.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <a class="button" id="tchatButton">Tchat</a>
+        <a class="button" id="inscriptionButton">Insciption</a>
+        <h1>LDNR projects</h1>
+        <a class="button" id="connexionButton">Connexion</a>
+        <a class="button" id="generatorButton">Générateur</a>
+    </header>
+    <main>
+
+        <aside id="tchatContainer">
+            <div id="fieldsetTchat">
+                <div id="tchat"></div>
+                <form id="tchatForm" action="#" method="post">
+                    <textarea type="text" id="message" placeholder="Votre message"></textarea>
+                    <span>
+                        <input type="text" id="pseudo" placeholder="Pseudo" />
+                        <input class="button" type="submit" name="submit" id="submit" value="Envoyer" />
+                    </span>
+                </form>
+
+            </div>
+            <a class="button" id="closeTchatButton">&#10005;</a>
+        </aside>
+
+        <section id="generatorContainer">
+            <section id="generatorResult">
+                <div id="generatedForm">
+                    <label>Test
+                        <input type="text" name="test" id="test" />
+                    </label>
+                    <label>Test1
+                        <input type="text" name="test1" id="test1" />
+                    </label>
+                    <label>Test2
+                        <input type="text" name="test2" id="test2" />
+                    </label>
+                    <label>Test3
+                        <input type="text" name="test3" id="test3" />
+                    </label>
+                </div>
+                <textarea id="generatedCode">
+                    <label>Test
+                        <input type="text" name="test" id="test" />
+                    </label>
+                    <label>Test1
+                        <input type="text" name="test1" id="test1" />
+                    </label>
+                    <label>Test2
+                        <input type="text" name="test2" id="test2" />
+                    </label>
+                    <label>Test3
+                        <input type="text" name="test3" id="test3" />
+                    </label>
+                </textarea>
+            </section>
+            <aside id="generatorForm">
+                <a class="button" id="generateButton">Générer</a>
+            </aside>
+            <a class="button" id="closeGeneratorButton">&#10005;</a>
+        </section>
+
+        <section id="formContainer">
+
+            <form id="connexionForm">
+                <div class="fieldsetForm">
+                    <span class="inputContainer">
+                    <label>Pseudo
+                    <input type="text" name="nicknameConnexion" id="nicknameConnexion" size="20" placeholder="Votre pseudo" />
+                    </label>
+                </span>
+                    <span class="inputContainer">
+                    <label>Mot de passe
+                    <input type="password" name="pwdConnexion" id="pwdConnexion" size="20" placeholder="Votre mot de passe" />
+                    </label>
+                </span>
+                </div>
+                <div class="fieldsetForm">
+                    <input class="button" type="submit" name="connexionFormButton" id="connexionFormButton" value="Connexion" />
+                    <input class="button" type="submit" name="forgotPwdButton" id="forgotPwdButton" value="MDP oublié ?!" />
+                </div>
+            </form>
+
+            <form id="inscriptionForm">
+
+                <div class="fieldsetForm">
+                    <span class="inputContainer">
+                        <label>Nom
+                        <input type="text" name="name" id="name" size="20" placeholder="Votre nom" />
+                        </label>
+                        <span class="error errorLeft" id='name_error'>Le nom doit comporter au moins 2 lettres et au plus 50.<span>&nbsp;&rarr;</span></span>
+                    </span>
+
+                    <span class="inputContainer">
+                        <label>Prénom
+                        <input type="text" name="firstname" id="firstname" size="20" placeholder="Votre prenom" />
+                        </label>
+                        <span class="error" id='firstname_error'><span>&larr;&nbsp;</span>Le prénom doit comporter au moins 2 lettres et au plus 50.</span>
+                    </span>
+
+                    <span class="inputContainer">
+                        <label>Pseudo
+                        <input type="text" name="nickname" id="nickname" size="20" placeholder="Votre pseudo" />
+                        </label>
+                        <span class="error errorLeft" id='nickname_error'>Le pseudo doit comporter au moins 6 caractères.<span>&nbsp;&rarr;</span></span>
+                    </span>
+
+                    <span class="inputContainer">
+                        <label id='birthdaylabel'>Date de naissance
+                        <input type="text" name="birthday" id="birthday" size="20" placeholder="jj/mm/aaaa"/>
+                        </label>
+                        <span class="error" id='birthday_error'><span>&larr;&nbsp;</span>Format: jour/mois/année. Seule les personnes de 10 ans au moins peuvent s'inscrire.</span>
+                    </span>
+                    <span class='inputContainer'>
+                        <label>Sexe Masculin:
+                            <input class="radio" type="radio" name="sex" value="masculin" />
+                        </label>
+                    </span>
+                    <span class='inputContainer'>
+                        <label>
+                            Sexe Féminin:
+                            <input class="radio" type="radio" name="sex" value="feminin" />
+                        </label>
+                    </span>
+                </div>
+
+                <div class="fieldsetForm">
+                    <span class="inputContainer">
+                        <label>Adresse
+                        <input type="text" name="address" id="address" placeholder="Votre adresse" /></label>
+                        <span class="error errorLeft" id='address_error'>L'adresse doit comporter au plus 100 caractères.<span>&nbsp;&rarr;</span></span>
+                    </span>
+
+                    <span class="inputContainer">
+                        <label>Code postal
+                        <input type="text" name="ZIPCode" id="ZIPCode" size="20" placeholder="Votre code postal" />
+                        </label>
+                        <span class="error errorLeft" id='ZIPCode_error'>Le code postal doit contenir exactement 5 chiffres.<span>&nbsp;&rarr;</span></span>
+                    </span>
+
+                    <span class="inputContainer">
+                        <label>Ville
+                        <input type="text" name="city" id="city" size="20" placeholder="Votre ville" />
+                        </label>
+                        <span class="error" id='city_error'><span>&larr;&nbsp;</span>La ville doit contenir au plus 50 caractères.</span>
+                    </span>
+                </div>
+
+                <div class="fieldsetForm">
+                    <span class="inputContainer">
+                        <label>Mot de passe
+                        <input type="password" name="pwd" id="pwd" size="20" placeholder="Votre mot de passe" />
+                        </label>
+                        <span class="error errorLeft" id='pwd_error'>Le mot de passe doit comporter au moins 8 caractères.<span>&nbsp;&rarr;</span></span>
+                    </span>
+
+                    <span class="inputContainer">
+                        <label>Confirmation
+                        <input type="password" name="confirm" id="confirm" size="20" placeholder="Confirmation mot de passe" />
+                        </label>
+                        <span class="error" id='confirm_error'><span>&larr;&nbsp;</span>Les mot de passes doivent correspondre.</span>
+                    </span>
+                </div>
+
+                <div class="fieldsetForm">
+                    <input class="button" type="submit" name="confirm" id="confirm" value="S'inscrire" />
+                    <input class="button" type="reset" name="confirm" id="confirm" value="Reset" />
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <div id="shadow"></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/exo1.js"></script>
+    <script src="js/tchat.js"></script>
+</body>
+
+</html>

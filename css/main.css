@@ -1,0 +1,197 @@
+/* Déclaration des polices utilisées */
+    @font-face {font-family:'Audiowide';src:url(police/Audiowide-Regular.ttf);}
+    @font-face {font-family:'Fredoka One';src:url(police/FredokaOne-Regular.ttf);}
+    @font-face {font-family:'Zeyada';src:url(police/Zeyada.ttf);}
+
+
+/* DEBUT Style du body (conteneur de la page) */
+    body {
+        
+        display:flex;
+        /* Arrière arrière grand papy flex */
+        flex-direction: column;
+        /* Contenu affiché en colonne, permet au main d'utiliser toute la hauteur disponible */
+        overflow: hidden;
+        /* Masque l'overflow de la page, celui-ci étant géré par le main */
+        background-color:#09c;
+        /* Arrière plan bleu (pour les vieux navigateurs) */
+        position: absolute;
+        /* Position absolue par rapport à la fenêtre */
+        /* Génération du dégradé en fond d'écran */
+        background-image: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        /* FF3.6-15 */
+        background-image: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background-image: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 );
+        /* IE6-9 */
+
+        background-attachment: fixed;
+        /* Fixe le background par rapport au défilement (évite les effets indésirables lorsque la page est plus grande que la fenêtre) */
+    }
+/* FIN style body */
+
+
+/* DEBUT Style commun à plusieurs éléments (évite les répétitions) */
+
+    body, #shadow {
+        
+        width:100%;height:100%;
+        /* Largeur et hauteur totale */
+    }
+
+    header, .button, #inscriptionForm, .fieldsetForm input,
+    #tchatContainer, #generatorForm, #connexionForm {
+        
+        box-shadow:0 0 3px black;
+        /* Ombre extérieure */
+    }
+
+    header, #inscriptionForm, #tchatContainer,
+    #generatorForm, #connexionForm {
+        
+        background:#E5E5E5;
+        /* Couleur de fond */
+    }
+
+    h1, label {
+        
+        font-family: "Audiowide", cursive;
+        /* Police utilisée */
+    }
+
+    .button, #inscriptionForm, label,
+    #tchatContainer, #generatorForm, #tchat,
+    #generatedCode, #connexionForm  {
+        
+        border-radius:6px;
+        /* Coins arrondis */
+    }
+
+    .button, h1, .fieldsetForm input {
+        
+        text-align:center;
+        /* Texte centré au milieu de l'input */
+    }
+
+    header, main, #formContainer,
+    .fieldsetForm, #fieldsetTchat, #tchatForm {
+
+        display: flex;
+        /* Déclaration du parent flex */
+        flex-wrap: wrap;
+        /* Autorise les enfants à passer à la ligne */
+        justify-content: space-around;
+        /* Répartis horizontalement les enfants */
+        align-items:center;
+        /* Centre verticalement les enfants */
+    }
+
+    #closeTchatButton, #closeGeneratorButton {
+        
+        position:absolute;
+        /* Postion absolute par rapport à leurs parents respectifs */
+        right:0px;top:0px;
+        /* Position fixée */
+    }
+/* FIN style commun */
+
+
+/* Style du header (barre de navigation) */
+    header {
+
+        width: 100%;
+        /* Largeur totale de la fenêtre */
+        padding:20px 0px;
+        /* Marge intérieure */
+        z-index:1;
+        /* Ordre de positionnement (premier plan, second plan, arrière plan...) */
+    }
+
+
+/* Style du titre de la page */
+    h1 {
+        
+        margin:20px 0px;
+        /* Marge extérieure */
+        padding: 0px 30px;
+        /* Marge intérieure sur les côtés */
+        font-size: 3.5em; /* taille de la police */
+        color: #444;
+        /* Couleur de la police */
+    }
+
+
+
+
+/* DEBUT Style des boutons (classe button) */
+    .button {
+
+        margin:10px;
+        /* Marge extérieure */
+        padding:7px;
+        /* Marge intérieure */
+        border:none;
+        /* Suppression de la bordure par défaut */
+        color:white;
+        /* Couleur de la police */
+        font-size:1.2em;
+        /* Taille de la police */
+        font-family:'Fredoka One',cursive;
+        /* Police utilisée */ 
+        background: #555555;
+        /* Arrière plan gris foncé (pour les vieux navigateurs) */
+
+        /* Génération du dégradé de fond */
+        background: -moz-linear-gradient(-45deg,  #555555 0%, #2c2c2c 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg,  #555555 0%,#2c2c2c 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg,  #555555 0%,#2c2c2c 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', endColorstr='#2c2c2c',GradientType=1 );
+        /* IE6-9 fallback on horizontal gradient */
+    }
+
+/* Style des boutons survolés */
+    .button:hover {
+
+        cursor:pointer;
+        /* Change la souris pour une main (comme un lien) */
+        box-shadow:1px 1px 10px black inset;
+        /* Ombre intérieure (effet d'enfoncement de button) */
+    }
+/* FIN style des boutons */
+
+
+/* Style du main (conteneur principal) */
+    main {
+        
+        position:relative;
+        /* Postion relative nécessaire au bon positionnement de formContainer */
+        flex:1;
+        /* Peut s'agrandir et se rétrécir en fonction de l'espace restant et de son contenu */
+        justify-content: center;
+        /* Centre horizontalement ses enfants */
+        overflow: auto;
+        /* Permet de faire défiler la page si la fenêtre est trop petite */
+    }
+
+
+/* Style du voile ombré (à l'affichage du formulaire) */
+    #shadow {
+        
+        flex:0;
+        /* Ne peut ni grandir ni rétrécir */
+        display:none;
+        /* Par défaut l'élément est masqué */
+        position:fixed;
+        /* Fixe l'élément par rapport au défilement (évite les effets indésirables lorsque la page est plus grande que la fenêtre) */
+        top:0px;left:0px;
+        /* Positionne notre élément en haut à gauche de la fenêtre */
+        background-color:rgba(0,0,0,0.6);
+        /* Couleur de fond noire transparente */
+        z-index:5;
+        /* Ordre de positionnement (premier plan, second plan, arrière plan...) */
+    }
