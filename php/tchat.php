@@ -1,4 +1,5 @@
 <?php
+    header('Access-Control-Allow-Origin: *');
     //On récupère le pseudo et on le stocke dans une variable
     $pseudo = isset($_POST['pseudo'])?$_POST['pseudo']:'unknown';
     //On fait de même avec le message
