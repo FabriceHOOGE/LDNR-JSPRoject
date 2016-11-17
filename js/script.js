@@ -31,12 +31,13 @@
     }
     
     function showConnexion(){
-        connexionForm.style.display="block";
-        shadow.style.display="block";
+        eConnexionForm.style.display="block";
+        eShadow.style.display="block";
     }
 
     function hideForm() {
         eInscriptionForm.style.display = "none";
+        eConnexionForm.style.display="none";
         eShadow.style.display = "none";
     }
 
