@@ -1,134 +1,210 @@
-#generatorContainer{
-        
+/* Style du conteneur du générateur */
+    #generatorContainer {
+
         flex:3;
+        /* Peut s'agrandir et se rétrécir plus que son frère */
         display:none;
+        /* Masqué par défaut */
         position:relative;
+        /* Position relative permettant de positionner ses enfants absolutes */
         height:calc(100% - 40px);
+        /* Hauteur totale moins la marge verticale */
         margin:20px;
+        /* Marge extérieure */
         min-height:500px;
-    }
+        /* Hauteur minimale */
+        }
 
-#generatorForm{
-    
-    position:absolute;
-    top:0px;
-    right:0px;
-    width:25%;
-    height:100%;
-    min-width:175px;
-}
+/* Style du générateur */
+    #generatorForm{
 
-#generatorResult{
-    
-    display:flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    position:absolute;
-    width:0%;
-    height:95%;
-    right:25%;
-    top:2.5%;
-    background:rgba(0,0,0,0.6);
-    
-}
-
-#generatorResult.generated{
-    
-    animation: openGenerator 2s ease both;
-}
-
-@keyframes openGenerator {
-    from {
-        width:0%;
-    }
-    to {
-        width:75%;
-    }
-}
-
-#generatedForm{
-    
-        flex:1;
-        display:flex;
-        justify-content: flex-start;
-        align-content: flex-start;
-        flex-wrap: wrap;
-        width:100%;
-        flex-basis: 70%;
-        overflow:auto;
-}
-
-#generatedForm label {
-        
-        display:block; /* Définition du span comme un bloc (ce n'est plus un inline) */
-        position:relative;
-        height:22px;
-        flex:1;
-        top:5px;
-        min-width:240px;
-        flex-basis:40%;
-            margin-top:inherit; /* Marge extérieure esthétique */
-        margin:10px 10px;
-        line-height:23px; /* Hauteur de la police du label */
-
-        padding-left:5px; /* Marge intérieure */
-        text-transform:uppercase; /* Force l'affichage en majuscule */
-        font-size:0.8em; /* Taille de la police */
-        color:#777; /* Couleur de la police */
-        box-shadow:0 0 1px white; /* Ombre extérieure */
-        background:#CECECE; /* Couleur de fond */
-    }
-
-#generatedForm input {
-    
         position:absolute;
-        width:40%; /* Largeur relative à celle du label */
-        height:27px; /* Augmente légèrement l'hauteur par défaut de l'input */
-        right:0px; /* Position à droite du label */
-        top:-3px; /* Ajustage vertical de la position */
-        font-size:1.2em; /* Taille de la police */
-        border-radius:10px; /* Coins arrondis */
-        border:1px solid #BBB; /* Bordure grise */
-        background:#EFEFEF; /* Couleur de fond (gris à la limite du blanc) */
+        /* Position absolue par rapport à son conteneur */
+        top:0px;right:0px; /* Position fixe */
+        width:25%;
+        /* 25% de la largeur totale du parent */
+        height:100%;
+        /* Hauteur totale du parent */
+        min-width:175px;
+        /* Largeur minimale */
     }
+
+/* Style du conteneur du contenu et du code généré */
+    #generatorResult{
+
+        display:flex;
+        /* Petit fils papa flex */
+        flex-direction: column;
+        /* Eléments affichés en colonne */
+        flex-wrap: nowrap;
+        /* Empêche les éléments de passer les uns à côté des autres */
+        justify-content: flex-start;
+        /* Centre verticalement les éléments en haut */
+        position:absolute;
+        /* Position absolue par rapport à son conteneur */
+        width:0%;height:95%;
+        /* Dimensions */
+        right:25%;top:2.5%;
+        /* Position */
+        background:rgba(0,0,0,0.6);
+        /* Noir transparent */
+
+    }
+
+/* Style du conteneur du contenu généré (à la génération) */
+    #generatorResult.generated{
+
+        animation: openGenerator 2s ease both;
+        /* Effet transition à la génération du formulaire */
+    }
+
+/* Etapes de l'animation */
+    @keyframes openGenerator {
+        from {width:0%;}
+        to {width:75%;}
+    }
+
+/* Style du conteneur du contenu généré */
+    #generatedForm{
+
+        flex:1;
+        /* Peut s'agrandir et se rétrécir */
+        display:flex;
+        /* Petit fils papa flex */
+        justify-content: flex-start;
+        /* Centre horizontalement les éléments à gauche */
+        align-content: flex-start;
+        /* Centre verticalement les éléments en haut */
+        flex-wrap: wrap;
+        /* Autorise le saut de ligne */
+        width:100%;
+        /* Largeur totale du parent */
+        flex-basis: 70%;
+        /* 70% de l'hauteur totale du parent */
+        overflow:auto;
+        /* Permet de faire défiler le contenu si la fenêtre est trop petite */
+    }
+
+/* Style des label du contenu généré */
+    #generatedForm label {
+
+        display:block;
+        /* Définition du span comme un bloc (ce n'est plus un inline) */
+        position:relative;
+        /* Position relative permettant de positionner ses enfants absolutes */
+        height:22px;
+        /* Hauteur */
+        flex:1;
+        /* Peut s'agrandir et se rétrécir */
+        top:5px;
+        /* Position */
+        min-width:240px;
+        /* Largeur minimale */
+        flex-basis:40%;
+        /* Largeur par défaut */
+        margin-top:inherit;
+        /* N'hérite pas de marge */
+        margin:10px 10px;
+        /* Marge extérieure esthétique */
+        line-height:23px;
+        /* Hauteur de la police du label */
+        padding-left:5px;
+        /* Marge intérieure */
+        text-transform:uppercase;
+        /* Force l'affichage en majuscule */
+        font-size:0.8em;
+        /* Taille de la police */
+        color:#777;
+        /* Couleur de la police */
+        box-shadow:0 0 1px white;
+        /* Ombre extérieure */
+        background:#CECECE;
+        /* Couleur de fond */
+    }
+
+/* Style des input du contenu généré */
+    #generatedForm input {
+
+        position:absolute;
+        /* Position absolue par rapport à son conteneur */
+        width:40%;
+        /* Largeur relative à celle du label */
+        height:27px;
+        /* Augmente légèrement l'hauteur par défaut de l'input */
+        right:0px;
+        /* Position à droite du label */
+        top:-3px;
+        /* Ajustage vertical de la position */
+        font-size:1.2em;
+        /* Taille de la police */
+        border-radius:10px;
+        /* Coins arrondis */
+        border:1px solid #BBB;
+        /* Bordure grise */
+        background:#EFEFEF;
+        /* Couleur de fond (gris à la limite du blanc) */
+        }
 
 /* Style des input actifs */
-    #generatedForm input:focus:not(.button) {
+        #generatedForm input:focus:not(.button) {
 
-        background: white; /* Couleur de fond blanc (magnifique =) */
-        box-shadow:0 0 2px black inset; /* Ombre intérieure */
+        background: white;
+            /* Couleur de fond blanc (magnifique =) */
+        box-shadow:0 0 2px black inset;
+            /* Ombre intérieure */
+        }
+
+/* Style du code généré */
+    #generatedCode{
+
+        flex:1;
+        /* Peut s'agrandir et se rétrécir */
+        padding: 10px;
+        /* Marge intérieure */
+        margin:10px;
+        /* Marge extérieure */
+        flex-basis: 20%;
+        /* Hauteur */
+        min-height:100px;
+        /* Hauteur minimale */
+        width:calc(100% - 40px);
+        /* Largeur moins la marge */
+        overflow: auto;
+        /* Permet de faire défiler le contenu si la fenêtre est trop petite */
+        background:rgba(255,255,255,0.6);
+        /* Couleur de fond blanc (magnifique =) */
+        box-shadow:0 0 2px black inset;
+        /* Ombre intérieure */
+        border:1px solid #BBB;
+        /* Bordure grise */
     }
 
-#generatedCode{
-    
-        flex:1;
-        padding: 10px;
-        margin:10px;
-        flex-basis: 20%;
-        min-height:100px;
-        width:calc(100% - 40px);
-        overflow: auto;
-        background:rgba(255,255,255,0.6); /* Couleur de fond blanc (magnifique =) */
-        box-shadow:0 0 2px black inset; /* Ombre intérieure */
-        border:1px solid #BBB; /* Bordure grise */
-}
-
-#generateButton{
-    position:absolute;
-    bottom:0px;right:0px;
-}
+/* Style du bouton généré */
+    #generateButton{
+        
+        position:absolute;
+        /* Position absolue par rapport à son conteneur */
+        bottom:0px;right:0px;
+        /* Position */
+    }
 
 
+
+
+/* Ajustement responsive des largeurs et positions du tchat et du générateur */
+
+/* LARGEUR */
     @media all and (max-width:960px) {
 
+        #tchatContainer{min-width:90%;}
         #generatorContainer{flex:1;min-width:90%;}
     }
 
     @media all and (max-width:780px) {
-        #generatorForm{height:250px;width:100%;}
 
+        #generatorForm{height:250px;width:100%;}
         #generatorResult{
+            
             top:250px;
             right:inherit;
             left:2.5%;
@@ -136,35 +212,53 @@
             width:inherit;
             width:95%;
         }
-        
-    @keyframes openGenerator {
-        from {
-            height:0%;
-        }
-        to {
-            height:100%;
+        @keyframes openGenerator {
+            from {height:0%;}
+            to {height:100%;}
         }
     }
+
+    @media all and (max-width:320px) {
+
+        #tchatContainer{min-width:300px;overflow-x: auto;overflow-y: hidden;}
+    }
+
+/* HAUTEUR */
+    @media all and (max-height:780px) {
         
+        #tchatContainer{overflow-x: auto;overflow-y: hidden;}
+        #generatorForm{height:250px;width:100%;}
+        #generatorResult{
+            
+            top:250px;
+            right:inherit;
+            left:2.5%;
+            height:0%;
+            width:inherit;
+            width:95%;
+        }
+        @keyframes openGenerator {
+            from {height:0%;}
+            to {height:100%;}
+        }
     }
 
     @media all and (max-height:640px) {
 
-        #generatorContainer{top:100px;}
+        #tchatContainer, #generatorContainer{top:100px;}
     }
 
     @media all and (max-height:540px) {
 
-        #generatorContainer{top:150px;}
+        #tchatContainer, #generatorContainer{top:150px;}
     }
 
     @media all and (max-height:440px) {
 
-        #generatorContainer{top:200px;}
+        #tchatContainer, #generatorContainer{top:200px;}
     }
 
     @media all and (max-height:340px) {
         
-        header{display:none;}
-        #generatorContainer{top:250px;}
+        #tchatContainer, #generatorContainer{top:250px;}
     }

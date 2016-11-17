@@ -94,11 +94,11 @@
 /* Style de ce p@$ù%!? de label trop long */
     #birthdaylabel {
        font-size: 0.7em;
-        /* Ajustage de ce p@$ù%!? de label trop long */
+        /* Ajustement de ce p@$ù%!? de label trop long */
      }
 
 
-/* Style des input (mais pas des boutons) */
+/* DEBUT Style des input (mais pas des boutons) */
     .fieldsetForm input:not(.button):not(.radio) {
         
         position:absolute;
@@ -130,77 +130,113 @@
         /* Ombre intérieure */
     }
 
-/* Style des input actifs */
+/* Style des input radio */
     .fieldsetForm input[type='radio'] {
+        
         position: absolute;
-        right: 0px;
-        top: 4px;
+        /* Position absolue par rapport parent */
+        right: 0px;top: 4px;
+        /* Position fixe */
         box-shadow: none;
+        /* Suppression des ombres par défaut de nos input */
     }
 
 /* Style de l'input de l'adresse */
     #address {
         
-        width:70.5%; /* Largeur relative à celle du label */
+        width:70.5%;
+        /* Largeur relative à celle du label */
     }
+/* FIN style input */
 
 
 /* Style des erreurs */
     .error {
         
         display: none;
-        position:absolute; /* Position absolue par rapport à son parent */
-        top:0px; /* Positionnée en haut de son parent */
-        left:120%; /* Positionnée à 120% (de la largeur du span parent) sur la droite */
-        width:350px; /* Largeur fixe */
-        color:white; /* Couleur de la police */
-        font-size:1.5em; /* Taille de la police */
-        font-family: "Zeyada", cursive; /* Police utilisée */
+        /* masqué par défaut */
+        position:absolute;
+        /* Position absolue par rapport à son parent */
+        top:0px;
+        /* Positionnée en haut de son parent */
+        left:120%;
+        /* Positionnée à 120% (de la largeur du span parent) sur la droite */
+        width:350px;
+        /* Largeur fixe */
+        color:white;
+        /* Couleur de la police */
+        font-size:1.5em;
+        /* Taille de la police */
+        font-family: "Zeyada", cursive;
+        /* Police utilisée */
     }
 
 /* Style des erreurs de gauche (en plein écran) */
     .errorLeft {
         
-        text-align: right; /* Texte aligné sur la droite pour les erreurs de gauche */
-        left:inherit; /* Evite d'interférer avec la position donnée pour les .error */
-        right:120%; /* Positionnée à 120% (de la largeur du span parent) sur la gauche */
+        text-align: right;
+        /* Texte aligné sur la droite pour les erreurs de gauche */
+        left:inherit;
+        /* Evite d'interférer avec la position donnée pour les .error */
+        right:120%;
+        /* Positionnée à 120% (de la largeur du span parent) sur la gauche */
     }
 
 /* Style de l'erreur de l'adresse (span plus grand donc position différente) */
     .fieldsetForm:nth-of-type(2) > .inputContainer:first-child > .error{
         
-        right:110%; /* Positionnée à 110% (de la largeur du span parent) sur la droite */
+        right:110%;
+        /* Positionnée à 110% (de la largeur du span parent) sur la droite */
     }
 
+/* Style du symbole contenu dans l'erreur */
     .error > span{
         
-        position:absolute; /* Position absolue par rapport à son parent */
-        top:0px; /* Positionnée en haut de son parent */
-        right:100%; /* Positionnée à 100% (de la largeur du span parent) sur la gauche */
+        position:absolute;
+        /* Position absolue par rapport à son parent */
+        top:0px;
+        /* Positionnée en haut de son parent */
+        right:100%;
+        /* Positionnée à 100% (de la largeur du span parent) sur la gauche */
     }
 
+/* Style du symbole contenu dans l'erreur de gauche */
     .errorLeft > span{
-        left:100%; /* Positionnée à 100% (de la largeur du span parent) sur la droite */
+        
+        left:100%;
+        /* Positionnée à 100% (de la largeur du span parent) sur la droite */
     }
 
 
 
-    /* Style du formulaire */
+/* Style du formulaire de connexion */
     #connexionForm {
 
         display:none;
-        width:25%; /* Largeur relative celle de la fenêtre */
-        margin:100px 0px; /* Marge esthétique (évite qu'il soit collé au header) */
-        padding:10px; /* Marge intérieure */
-        z-index:10; /* Ordre de positionnement (premier plan, second plan, arrière plan...) */
+        /* masqué par défaut */
+        width:25%;
+        /* Largeur relative celle de la fenêtre */
+        margin:100px 0px;
+        /* Marge esthétique (évite qu'il soit collé au header) */
+        padding:10px;
+        /* Marge intérieure */
+        z-index:10;
+        /* Ordre de positionnement (premier plan, second plan, arrière plan...) */
     }
 
+/* Style des spans contenant les input */
     #connexionForm span{
+        
         width:100%;
+        /* Largeur totale du formulaire */
     }
 
+
+/* Classe appliquée aux erreurs */
    .show{
+       
         display:block;
+       /* Affiche l'erreur concernée */
     }
 
     
@@ -210,39 +246,62 @@
 
     @media all and (max-width:1440px) {
         #connexionForm{width:35%;}
-        #inscriptionForm{width:45%;} /* Ajustement de la largeur du formulaire */
-        .fieldsetForm:nth-of-type(2)  > .inputContainer:first-child{width:100%;} /* Ajustement de la largeur du span contenant l'adresse */
-        .inputContainer{width:100%;} /* Ajustement de la largeur du label adresse */
-        .error{left:110%;width:220px;} /* Ajustement de la position et largeur des erreurs */
-        .errorLeft{left:inherit;right:110%;} /* Ajustement de la position des erreurs de gauche */
+        /* Ajustement de la largeur du formulaire */
+        #inscriptionForm{width:45%;}
+        /* Ajustement de la largeur du formulaire */
+        .fieldsetForm:nth-of-type(2)  > .inputContainer:first-child{width:100%;}
+        /* Ajustement de la largeur du span contenant l'adresse */
+        .inputContainer{width:100%;}
+        /* Ajustement de la largeur du label adresse */
+        .error{left:110%;width:220px;}
+        /* Ajustement de la position et largeur des erreurs */
+        .errorLeft{left:inherit;right:110%;}
+        /* Ajustement de la position des erreurs de gauche */
         #birthdaylabel {font-size: 0.8em;}
+        /* Ajustement de ce p@$ù%!? de label trop long */
     }
 
     @media all and (max-width:960px) {
         #connexionForm{width:45%;}
-        #inscriptionForm{width:55%;} /* Ajustement de la largeur du formulaire */
-        .fieldsetForm:nth-of-type(2) > .inputContainer:first-child > .error{right:inherit;} /* Evite l'interférence du positionnement pour l'erreur de l'adresse */
-        .error > span{display:none;} /* On masque la flèche */
-        .error:before{content:"⚠ ";} /* On affiche un joli warning */
+        /* Ajustement de la largeur du formulaire */
+        #inscriptionForm{width:55%;}
+        /* Ajustement de la largeur du formulaire */
+        .fieldsetForm:nth-of-type(2) > .inputContainer:first-child > .error{right:inherit;}
+        /* Evite l'interférence du positionnement pour l'erreur de l'adresse */
+        .error > span{display:none;}
+        /* On masque la flèche */
+        .error:before{content:"⚠ ";}
+        /* On affiche un joli warning */
         .error{
+            
             width:inherit;
+            /* Evite d'interférer avec la largeur donnée pour les .error */
             text-align:left;
-            position:relative; /* On passe les erreurs en position relative (sous leur frère) */
-            top:0px;left:0px; /* On réinitialise leur position */
-            color:#444; /* On change leur couleur de police */
+            /* Aligne le texte à gauche (pour les erreurs de gauche) */
+            position:relative;
+            /* On passe les erreurs en position relative (sous leur frère) */
+            top:0px;left:0px;
+            /* On réinitialise leur position */
+            color:#444;
+            /* On change leur couleur de police */
         }
     }
 
     @media all and (max-width:780px) {
         
-        h1{width:100%;order:-1;} /* Ajustement de la largeur du titre et le place au-dessus des boutons */
-        #inscriptionForm{width:65%;} /* Ajustement de la largeur du formulaire */
+        h1{width:100%;order:-1;}
+        /* Ajustement de la largeur du titre et le place au-dessus des boutons */
+        #inscriptionForm{width:65%;}
+        /* Ajustement de la largeur du formulaire */
         #connexionForm{width:55%;}
+        /* Ajustement de la largeur du formulaire */
 
 
     @media all and (max-width:560px) {
         
         #connexionForm{width:100%;}
-        #inscriptionForm{width:100%;} /* Ajustement de la largeur du formulaire */
-        #tchatButton{order:+1;} /* A RAJOUTERRRRR */
+        /* Ajustement de la largeur du formulaire */
+        #inscriptionForm{width:100%;}
+        /* Ajustement de la largeur du formulaire */
+        #tchatButton{order:+1;} /* Place le bouton tchat à côté du générateur */
     }
