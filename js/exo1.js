@@ -7,7 +7,7 @@
             if (iLength >= iMin) return true;
             return false;
         } else {
-            if (iLength > iMin && iLength < iMax) return true;
+            if (iLength >= iMin && iLength < iMax) return true;
             return false;
         }
     }
